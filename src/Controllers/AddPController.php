@@ -1,5 +1,5 @@
 <?php 
-namespace Handmade\controllers;
+namespace Handmade\Controllers;
 use DunnServer\MVC\Controller;
 use DunnServer\Utils\DunnArray;
 use Handmade\Models\Products;
@@ -19,19 +19,12 @@ class AddPController extends Controller
         $img = $upload->get('image', new DunnArray())->get(0);
         $root = $req->server('HTTP_HOST');
         if($img) {
-            $path = "http://$root".$img->getPath();
             $product['image'] = $img->getPath();
             $pdb->add(Products::fromArray($product));
-            $product['image'] = $path;
-            $res->send([
-                'product' => $product,
-                'error' => null
-            ]);
+            $product['image'] = "http://$root".$img->getPath();
+            $res->send($product);
         } else {
-            $res->status(400)->send([
-                'product' => null,
-                'error' => 'No image uploaded'
-            ]);
+            $res->status(400)->send(['error' => 'Image is required']);
         }
 
     }

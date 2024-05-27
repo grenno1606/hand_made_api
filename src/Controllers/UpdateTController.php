@@ -1,5 +1,5 @@
 <?php 
-namespace Handmade\controllers;
+namespace Handmade\Controllers;
 use DunnServer\MVC\Controller;
 use DunnServer\Utils\DunnArray;
 use Handmade\Models\Tutorials;

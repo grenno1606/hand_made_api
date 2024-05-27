@@ -17,7 +17,7 @@ class CustomUploadFilter extends HandleFileFilter
         // Validate file types
         $upload->values()->forEach(function ($files) use (&$isImage) {
             $files->forEach(function ($file) use (&$isImage) {
-                if ($file->getType() !== 'image/png' && $file->getType() !== 'image/jpeg' && $file->getType("image/*")) {
+                if ($file->getType() !== 'image/png' && $file->getType() !== 'image/jpeg' && $file->getType("image/*") !== 'image/*') {
                     $isImage = false;
                     return;
                 }

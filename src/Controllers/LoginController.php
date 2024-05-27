@@ -1,6 +1,6 @@
 <?php
 
-namespace Handmade\controllers;
+namespace Handmade\Controllers;
 
 use DunnServer\MVC\Controller;
 use Handmade\Models\UsersDatabase;

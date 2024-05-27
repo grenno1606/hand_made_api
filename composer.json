@@ -11,11 +11,11 @@
     "scripts": {
         "start": [
             "Composer\\Config::disableProcessTimeout",
-            "php -S localhost:8080 -t public/"
+            "php -S localhost:8080 -t ./public"
         ],
         "start:lan": [
             "Composer\\Config::disableProcessTimeout",
-            "php -S 192.168.43.147:8080 -t public/"
+            "php -S 192.168.43.36:8080 -t public/"
         ]
     }
 }
